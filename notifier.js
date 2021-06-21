@@ -17,6 +17,8 @@ class Notifier extends EventEmitter {
 
     }
 
+    
+
 }
 
 module.exports = Notifier;

@@ -19,9 +19,9 @@ class FileWatcher extends EventEmtter {
             if (isFileFound) {
                 fs.readFile(updatedFile, 'utf-8', (err, data) => {
 
-                    let searchStr = new String(name).toUpperCase();
-                    let fileContents = new String(data).toUpperCase();
-                    let isNameFound = new RegExp("\\b" + searchStr + "\\b").test(fileContents);
+                    let nameToSearch = new String(name).toUpperCase();
+                    let files = new String(data).toUpperCase();
+                    let isNameFound = new RegExp("\\b" + nameToSearch + "\\b").test(files);
                     
                     if (isNameFound) {
                         this.emit('nameFoundOnFile', fileName);
